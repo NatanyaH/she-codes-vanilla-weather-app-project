@@ -1,3 +1,7 @@
 h1 {
   color: red;
 }
+.weather-app {
+  border: solid;
+  padding: 16px;
+}
