@@ -53,6 +53,7 @@ function displayTemperature(response) {
   let humidity = response.data.main.humidity;
   let city = response.data.name;
   let description = response.data.weather[0].description;
+  let weatherIcon = response.data.weather[0].icon;
 
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city-name");
@@ -60,8 +61,7 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#wind");
   let descriptionElement = document.querySelector("#weather-description");
   let dateElement = document.querySelector("#date");
-
-  console.log(dateElement);
+  let imgIconElement = document.querySelector("#icon");
 
   temperatureElement.innerHTML = Math.round(temperature);
   cityElement.innerHTML = city;
@@ -69,6 +69,11 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(wind);
   descriptionElement.innerHTML = description;
   dateElement.innerHTML = formatDate(response.data.dt);
+  imgIconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${weatherIcon}@2x.png`
+  );
+  imgIconElement.setAttribute("alt", description);
 }
 
 let cityName = "Montreal";
