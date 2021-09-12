@@ -30,3 +30,21 @@ li {
   margin: 32px auto;
   max-width: 600px;
 }
+.overview {
+  margin-bottom: 24px;
+}
+
+.weather-temperature img {
+  margin: 5px;
+  width: 64px;
+  height: 64px;
+}
+.weather-temperature strong {
+  color: red;
+  line-height: 20px;
+  font-size: 64px;
+  font-weight: 800px;
+}
+.weather-temperature .units {
+  background-color: cornsilk;
+}
