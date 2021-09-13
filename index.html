@@ -20,6 +20,22 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
+          <form id="searchForm" class="mb-4">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Search for location ..."
+                  id="searchInputTxtField"
+                  class="form-control"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-3">
+                <button class="btn btn-info" id="searchButton">Search</button>
+              </div>
+            </div>
+          </form>
           <div class="overview">
             <h1 id="city-name">New York</h1>
             <h2></h2>

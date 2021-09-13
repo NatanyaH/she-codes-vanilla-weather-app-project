@@ -76,10 +76,22 @@ function displayTemperature(response) {
   imgIconElement.setAttribute("alt", description);
 }
 
-let cityName = "Montreal";
-let units = "metric";
-let apiKey = "49d8c99dff260bd8e2a249b94e59247d";
-let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}`;
-console.log(apiURL);
+function search(cityName) {
+  let units = "metric";
+  let apiKey = "49d8c99dff260bd8e2a249b94e59247d";
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=${units}`;
+  console.log(apiURL);
 
-axios.get(apiURL).then(displayTemperature);
+  axios.get(apiURL).then(displayTemperature);
+}
+
+function searchFunctionality() {
+  event.preventDefault();
+  let searchInput = document.querySelector("#searchInputTxtField");
+  search(searchInput.value);
+}
+
+search("Montreal");
+
+let form = document.querySelector("form");
+form.addEventListener("submit", searchFunctionality);
