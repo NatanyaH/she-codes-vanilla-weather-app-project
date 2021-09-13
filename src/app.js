@@ -31,7 +31,9 @@ function formatDate(timeStamp) {
   }
 
   // calculate hours less than 10
-  if (hours < 10) {
+  if (hours < 1) {
+    hours = "12";
+  } else if (hours > 0 && hours < 10) {
     hours = "0" + hours;
   } else if (hours > 12) {
     hours = hours - 12;
@@ -47,6 +49,8 @@ function formatDate(timeStamp) {
 
 function displayTemperature(response) {
   console.log(response.data);
+
+  celsiusTemperature = response.data.main.temp;
 
   let wind = response.data.wind.speed;
   let temperature = response.data.main.temp;
@@ -91,7 +95,37 @@ function searchFunctionality() {
   search(searchInput.value);
 }
 
+function displayFahrenheitTemperature(event) {
+  // alert("");
+  event.preventDefault();
+
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+
+  celsiusElement.classList.remove("active");
+  fahrenheitElement.classList.add("active");
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  fahrenheitElement.classList.remove("active");
+  celsiusElement.classList.add("active");
+}
+
 search("Montreal");
+
+let celsiusTemperature = null;
 
 let form = document.querySelector("form");
 form.addEventListener("submit", searchFunctionality);
+
+let fahrenheitElement = document.querySelector("#fahrenheit-link");
+fahrenheitElement.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusElement = document.querySelector("#celsius-link");
+celsiusElement.addEventListener("click", displayCelsiusTemperature);

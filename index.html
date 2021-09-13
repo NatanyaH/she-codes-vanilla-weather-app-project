@@ -37,12 +37,12 @@
             </div>
           </form>
           <div class="overview">
-            <h1 id="city-name">New York</h1>
+            <h1 id="city-name"></h1>
             <h2></h2>
 
             <ul>
-              <li>Last updated: <span id="date">Sunday, 12:00 pm</span></li>
-              <li id="weather-description">Clear Skies</li>
+              <li>Last updated: <span id="date"></span></li>
+              <li id="weather-description"></li>
               <li></li>
             </ul>
           </div>
@@ -54,8 +54,11 @@
                   alt=""
                   id="icon"
                 />
-                <stong id="temperature">12</stong>
-                <span class="units">°C | <a href="#">°F</a></span>
+                <strong id="temperature"></strong>
+                <span class="units">
+                  <a id="celsius-link" class="active">°C </a>|
+                  <a href="#" id="fahrenheit-link">°F</a></span
+                >
               </div>
             </div>
 

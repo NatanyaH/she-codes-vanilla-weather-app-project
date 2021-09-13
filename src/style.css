@@ -40,14 +40,24 @@ li {
   height: 64px;
 }
 .weather-temperature strong {
-  color: red;
   line-height: 20px;
   font-size: 64px;
   font-weight: 800px;
 }
-.weather-temperature .units {
-  background-color: cornsilk;
-}
+
 #weather-description {
   text-transform: capitalize;
+}
+
+.weather-temperature .active {
+  color: #000;
+  cursor: default;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
+#fahrenheit-link,
+#celsius-link {
+  text-decoration: none;
 }
