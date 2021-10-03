@@ -17,6 +17,7 @@ h1 {
 }
 hr {
   background-color: 1px solid rgb(221, 224, 225);
+  background-color: #b85b14;
 }
 ul {
   margin: 0px;
@@ -30,7 +31,7 @@ li {
 .weather-app {
   border: 1px solid rgb(221, 224, 225);
   border-radius: 4px;
-  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  background: linear-gradient(400deg, #fdfbfb 0%, #ebedee 100%);
   padding: 24px;
   margin: 20px;
 }
@@ -81,10 +82,13 @@ li {
 }
 
 .weather-forecast-temperatures {
-  font-size: 13px;
+  font-size: 14px;
 }
 .weather-forecast-temperature-min {
   opacity: 0.6;
+}
+.weather-forecast-temperature-max {
+  font-weight: bold;
 }
 
 .forecastCard {
@@ -109,4 +113,9 @@ li {
 
 footer {
   text-align: center;
+}
+
+.units {
+  position: relative;
+  top: -30px;
 }
